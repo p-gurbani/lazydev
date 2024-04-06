@@ -61,5 +61,25 @@
 			"import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogClose, DialogTrigger } from \"@/components/ui/dialog\";"
 		],
 		"description": "imports shadcn dialog components"
+	},
+	"shadcn form field": {
+		"prefix": "scFormField",
+		"body": [
+			"<FormField",
+			"\tcontrol={form.control}",
+			"\tname=\"${4}\"",
+			"\tdefaultValue=\"\"",
+			"\trender={({ field }) => (",
+			"\t\t<FormItem>",
+			"\t\t\t<FormLabel>${4/(\\b[a-z])*([a-z]+(?=[A-Z]))/${1:/upcase}$2${3: }/g}</FormLabel>",
+			"\t\t\t<FormControl>",
+			"\t\t\t\t${5}",
+			"\t\t\t</FormControl>",
+			"\t\t\t<FormMessage />",
+			"\t\t</FormItem>",
+			"\t)}",
+			"/>"
+		],
+		"description": "Shadcn FormField snippet"
 	}
 }
