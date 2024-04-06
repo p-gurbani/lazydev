@@ -1,0 +1,65 @@
+{
+	"useForm with zodResolver": {
+		"prefix": "useFormZod",
+		"body": [
+			"const form = useForm<${1:SchemaType}>({",
+			"\tresolver: zodResolver(${2:Schema}),",
+			"});"
+		],
+		"description": "useForm with zodResolver for form validation"
+	},
+	"react-query hook": {
+		"prefix": "reactQueryHook",
+		"body": [
+			"const ${1/(use)+?((?<=\\b\\w*use)\\w+)/${2:/camelcase}/} = ${1:$CLIPBOARD}();"
+		],
+		"description": "Eg: const loginMutation = useLoginMutation();"
+	},
+	"shadcn button extension component": {
+		"prefix": "scBtn",
+		"body": [
+			"import { Button, ButtonProps } from \"@/components/ui/button\";",
+			"import { forwardRef } from \"react\";",
+			"",
+			"interface I${1}ButtonProps extends ButtonProps {}",
+			"",
+			"const ${1}Button = forwardRef<HTMLButtonElement, I${1}ButtonProps>(",
+			"\t({ children, ...props }, ref) => {",
+			"\t\treturn (",
+			"\t\t\t<Button ref={ref} {...props}>",
+			"\t\t\t\t{children}",
+			"\t\t\t</Button>",
+			"\t\t);",
+			"\t}",
+			");",
+			"",
+			"export default ${1}Button;"
+		],
+		"description": "Shadcn button extension component snippet"
+	},
+	"shadcn dialog": {
+		"prefix": "scDialog",
+		"body": [
+			"<Dialog open={${1:isDialogOpen}} onOpenChange={set${1/(.*)/${1:/pascalcase}/}}>",
+			"\t<DialogTrigger>${2}</DialogTrigger>",
+			"\t<DialogContent>",
+			"\t\t<DialogHeader>",
+			"\t\t\t<DialogTitle>${3:$2}</DialogTitle>",
+			"\t\t</DialogHeader>",
+			"\t\t<DialogFooter>",
+			"\t\t\t<DialogClose>Close</DialogClose>",
+			"\t\t\t<Button type=\"submit\">${4:Submit}</Button>",
+			"\t\t</DialogFooter>",
+			"\t</DialogContent>",
+			"</Dialog>"
+		],
+		"description": "Shadcn dialog snippet"
+	},
+	"shadcn dialog import": {
+		"prefix": "scDialogImport",
+		"body": [
+			"import { Dialog, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogClose, DialogTrigger } from \"@/components/ui/dialog\";"
+		],
+		"description": "imports shadcn dialog components"
+	}
+}
